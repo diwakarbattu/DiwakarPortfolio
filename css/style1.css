@@ -2780,7 +2780,7 @@ body.loaded #toggle {
   margin: 0;
   padding: 0 0 8px 15px;
   list-style: none;
-  font: 100 14px/130% Lato, sans-serif;
+  font: 300 15px/130% Lato, sans-serif;
   color: #ffffff;
   background: url(../images/footer-links-bg.png) 0 5px no-repeat;
   transition: all 0.3s ease-in-out;
@@ -2793,4 +2793,8 @@ body.loaded #toggle {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+#Footer .copy {
+  text-align: center;
+  font-size: 15px;
 }
