@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .grid-Container {
+            display: grid;
+            grid-auto-columns: 200px 200px 200px 200px;
+            grid-auto-rows: 200px 200px;
+
+            grid-template-areas: "box-1 box-2 box-2 box-3"
+                "box-1 box-4 box-5 box-5";
+
+            gap: 10px;
+
+        }
+
+        .itmes {
+            background-color: rgba(68, 71, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .img-Container {
+            width: 500px;
+            display: grid;
+            place-items: end;
+        }
+
+        .img-Container img {
+            width: 100%;
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        .img-Container .text {
+            background-color: rgb(61, 61, 61);
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            font-size: 15px;
+            height: 60px;
+            border-radius: 20px;
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+
+        .carsol {
+            display: flex;
+            margin: 50px auto;
+            gap: 10px;
+            width: 90%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            anchor-name: --buttons;
+            scroll-snap-type: x mandatory;
+            scroll-marker-group: after;
+            justify-self: anchor-center;
+        }
+
+        .carsol::scroll-marker-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .card::scroll-marker {
+            width: 20px;
+            content: '';
+            height: 20px;
+            background-color: rgb(252, 0, 0);
+            border-radius: 50%;
+        }
+
+        .carsol::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carsol::scroll-button(right),
+        .carsol::scroll-button(left) {
+            content: "\2192";
+            width: 50px;
+            height: 50px;
+            background-color: rgb(78, 239, 66);
+            border-radius: 50%;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            position: fixed;
+            position-anchor: --buttons;
+            position-area: right center;
+            translate: -50%;
+        }
+
+        .carsol::scroll-button(left) {
+            content: "\2190";
+            translate: 50%;
+            position-area: left center;
+        }
+
+        .carsol::scroll-button(right):disabled,
+        .carsol::scroll-button(left):disabled {
+            opacity: 0.7;
+            cursor: auto;
+        }
+
+        .card {
+            flex: 0 0 200px;
+            aspect-ratio: 3/5;
+            height: 110px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(138, 249, 159);
+            text-align: center;
+            align-content: center;
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-Container">
+        <div class="itmes" style="grid-area: box-1">1 itmes</div>
+        <div class="itmes" style="grid-area: box-2">2 itmes</div>
+        <div class="itmes" style="grid-area: box-3">3 itmes</div>
+        <div class="itmes" style="grid-area: box-4">4 itmes</div>
+        <div class="itmes" style="grid-area: box-5">5 itmes</div>
+    </div>
+    <div class="img-Container">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="">
+        <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod deleniti cumque expedita eos
+            voluptatem quam
+            est, velit necessitatibus vitae, dignissimos sed omnis modi placeat maiores vel quos suscipit minus
+            provident.</p>
+    </div>
+
+    <div class="carsol">
+        <div class="card">1 itmes</div>
+        <div class="card">2 itmes</div>
+        <div class="card">3 itmes</div>
+        <div class="card">4 itmes</div>
+        <div class="card">5 itmes</div>
+        <div class="card">6 itmes</div>
+        <div class="card">7 itmes</div>
+        <div class="card">8 itmes</div>
+        <div class="card">9 itmes</div>
+        <div class="card">10 itmes</div>
+        <div class="card">11 itmes</div>
+        <div class="card">12 itmes</div>
+        <div class="card">13 itmes</div>
+        <div class="card">14 itmes</div>
+        <div class="card">15 itmes</div>
+        <div class="card">16 itmes</div>
+        <div class="card">17 itmes</div>
+    </div>
+
+</body>
+
+</html>

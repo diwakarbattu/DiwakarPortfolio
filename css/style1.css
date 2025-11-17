@@ -1448,6 +1448,7 @@ ul.fc-slides li {
   transform: rotate(-2deg);
   z-index: 99;
 }
+
 #MySkils {
   background: url(../images/skils-banner-top-bg.png) center 0 no-repeat;
 }
@@ -1617,6 +1618,62 @@ ul.fc-slides li {
   position: absolute;
   bottom: -69px;
 }
+/* -ui-ux-skils styles  start */
+.my-ui-ux-skils-top-line {
+  width: 100%;
+  height: 50px;
+  background: rgb(143, 0, 204);
+  bottom: -24px;
+  opacity: 1;
+  position: relative;
+  right: -1px;
+  transform: rotate(-2deg);
+  z-index: 99;
+}
+
+#MyUiUxSkils {
+  background: url(../images/ui-ux-banner-top-bg.png) center 0 no-repeat;
+}
+#My-ui-ux-process .ui-ux-welcome-row {
+  background: rgb(143, 0, 204);
+  padding: 20px 0 50px;
+  margin: 0;
+}
+#My-ui-ux-process .container-fluid,
+#My-ui-ux-process .ui-ux-welcome-row .col-lg-12,
+#My-ui-ux-process h2,
+#My-ui-ux-process h3 {
+  padding: 0;
+  margin: 0;
+}
+#My-ui-ux-process h2 {
+  font: 300 80px/140% Lato, serif;
+  color: #fff;
+  text-shadow: none;
+  text-align: center;
+}
+#My-ui-ux-process h3 {
+  font: 300 18px/140% Lato, sans-serif;
+  color: #ffffff;
+  text-shadow: none;
+  text-align: center;
+}
+#MyUiUxSkils .my-skils-contents {
+  font: 300 20px/140% "Roboto Slab", sans-serif;
+  color: #000;
+}
+#MyUiUxSkils .my-skils-contents p {
+  font: 300 20px/130% "Roboto Slab", sans-serif;
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+}
+#MyUiUxSkils .uiskills {
+  clear: both;
+  margin: 0;
+  padding: 75px 20px 0 0;
+}
+/* -ui-ux-skils styles  End */
+
 .contact-top-line,
 .my-works-top-line {
   bottom: -24px;
@@ -2797,4 +2854,21 @@ body.loaded #toggle {
 #Footer .copy {
   text-align: center;
   font-size: 15px;
+}
+
+.sub-hd {
+  color: #333 !important;
+  text-align: justify !important;
+  font-weight: 500 !important;
+}
+
+.sub-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+.ui-ux-text li {
+  font: 300 16px / 150% Lato, sans-serif;
+  color: #333;
+  margin: 5px 0px;
+  color: #000;
 }
