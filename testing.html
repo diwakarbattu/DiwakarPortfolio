@@ -48,6 +48,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="logo"><img src="images/logo.png" alt="Logo"></div>
+
                         <div class="col-xs-12 col-sm-5 col-md-6 col-lg-5 col-lg-offset-1">
                             <div class="battu-designer-dec">
                                 <p data-scrollReveal="enter from the top after 1.0s"><span>Hello</span></p>
@@ -90,6 +91,7 @@
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <a class="button" href="#AboutScreen"></a>
@@ -1018,44 +1020,24 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 offset-lg-3 col-lg-6 col-lg-offset-1">
-                            <form action="#" method="post" name="contact-form" id="contact-form">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"
-                                        data-scrollReveal="enter from the left after 1.3s">
-                                        <input name="full-name" id="full-name" type="text" class="form-control required"
-                                            placeholder="Name">
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"
-                                        data-scrollReveal="enter from the left after 1.6s">
-                                        <input name="email" id="email" type="text" class="form-control required email"
-                                            placeholder="Email">
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4"
-                                        data-scrollReveal="enter from the left after 1.9s">
-                                        <input name="phone" id="phone" type="text" class="form-control required txt-box"
-                                            value="Phone">
-                                        <!-- <input name="phone" id="phone" type="text" class="form-control required txt-box"
-                                            onblur="if (this.value == '') this.value = 'Phone';"
-                                            onfocus="if (this.value == 'Phone') this.value = '';" value="Phone"> -->
-                                    </div>
-                                </div>
-                                <div class="row contact-textarea-box">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
-                                        data-scrollReveal="enter from the left after 2.2s">
-                                        <textarea class="form-control required"
-                                            onblur="if (this.value == '') this.value = 'Message';"
-                                            onfocus="if (this.value == 'Message') this.value = '';" id="message"
-                                            name="message">Message</textarea>
-                                    </div>
-                                </div>
-                                <div class="row contact-button-box">
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
-                                        data-scrollReveal="enter from the top after 2.5s">
-                                        <input id="submitquery" class="form-control submit-cta" type="submit"
-                                            value="Send message">
-                                    </div>
-                                </div>
+                            <!-- hidden iframe -->
+                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                            <form id="contactForm"
+                                action="https://script.google.com/macros/s/AKfycbzc_28plBf8PnWpav_hjFUtHwS2nWHk6Lb9PhosqLrJEbwIXC9KhxMpFCs1NecOENqUuQ/exec"
+                                method="post" target="hidden_iframe">
+                                <input name="name" id="name" placeholder="Name" />
+                                <div id="status"></div>
+                                <input name="email" id="email" placeholder="Email" />
+                                <input name="phone" id="phone" placeholder="Phone" />
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                                <input type="hidden" name="__key" value="b7f9c3a1e84d4f29ac67f154be92d8f0" />
+                                <input type="submit" id="submitBtn" value="Send message" />
                             </form>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -1099,7 +1081,7 @@
                             <h2>&nbsp;</h2>
                             <h3>Web Design Tutorials</h3>
                             <ul>
-                                <li><a href="testing.html" target="_blank"
+                                <li><a href="http://www.w3schools.com/" target="_blank"
                                         rel="noopener noreferrer">www.w3schools.com</a></li>
                                 <li><a href="http://teamtreehouse.com/" target="_blank"
                                         rel="noopener noreferrer">www.teamtreehouse.com</a></li>
@@ -1168,6 +1150,109 @@
         };
 
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const FORM = document.getElementById('contactForm');
+            const STATUS = document.getElementById('status');
+            const BTN = document.getElementById('submitBtn');
+            const IFRAME = document.getElementById('hidden_iframe');
+
+            if (!FORM || !STATUS || !BTN || !IFRAME) {
+                console.error("Contact form elements missing:", { FORM, STATUS, BTN, IFRAME });
+                return;
+            }
+
+            // simple validators
+            function validateEmail(email) {
+                return /\S+@\S+\.\S+/.test(email);
+            }
+            function validatePhone(p) {
+                if (!p) return true;
+                return /^[0-9+\-\s]{7,20}$/.test(p);
+            }
+
+            // listen for messages from iframe (Apps Script returns a small page that posts a message)
+            window.addEventListener('message', function (event) {
+                // We accept messages from any origin here because Apps Script exec pages
+                // may have different origin — for production you can validate event.origin
+                try {
+                    const d = event.data || {};
+                    if (d.status === 'success') {
+                        STATUS.style.color = 'green';
+                        STATUS.textContent = 'Thank you — your message has been sent!';
+                        FORM.reset();
+                    } else {
+                        STATUS.style.color = 'crimson';
+                        STATUS.textContent = 'Error sending message: ' + (d.message || 'Server error');
+                    }
+                } catch (err) {
+                    console.error('postMessage handler error', err);
+                } finally {
+                    BTN.disabled = false;
+                    BTN.value = 'Send message';
+                }
+            });
+
+            // on submit: simple client validation, then native form submit (posts into hidden iframe)
+            FORM.addEventListener('submit', function (e) {
+                // client-side validation
+                const name = (FORM.querySelector('[name="name"]') || {}).value || '';
+                const email = (FORM.querySelector('[name="email"]') || {}).value || '';
+                const phone = (FORM.querySelector('[name="phone"]') || {}).value || '';
+                const message = (FORM.querySelector('[name="message"]') || {}).value || '';
+
+                STATUS.style.color = '#111';
+                STATUS.textContent = '';
+
+                if (!name.trim() || !email.trim()) {
+                    STATUS.style.color = 'crimson';
+                    STATUS.textContent = 'Name and Email are required.';
+                    e.preventDefault();
+                    return;
+                }
+                if (!validateEmail(email.trim())) {
+                    STATUS.style.color = 'crimson';
+                    STATUS.textContent = 'Please enter a valid email address.';
+                    e.preventDefault();
+                    return;
+                }
+                if (!validatePhone(phone.trim())) {
+                    STATUS.style.color = 'crimson';
+                    STATUS.textContent = 'Please enter a valid phone number.';
+                    e.preventDefault();
+                    return;
+                }
+
+                // disable button and allow normal form submit to iframe (no fetch, no CORS)
+                BTN.disabled = true;
+                BTN.value = 'Sending...';
+                // form will submit to action URL and response will load inside hidden_iframe,
+                // which triggers the postMessage back to this window handled above.
+            });
+
+            // optional: if network error or script didn't postMessage back, show fallback after timeout
+            // (e.g., 12 seconds)
+            FORM.addEventListener('submit', function () {
+                // set a fallback timer
+                const timer = setTimeout(function () {
+                    if (BTN.disabled) {
+                        BTN.disabled = false;
+                        BTN.value = 'Send message';
+                        STATUS.style.color = 'crimson';
+                        STATUS.textContent = 'Unexpected delay — please try again.';
+                    }
+                }, 12000);
+
+                // clear timer once postMessage handled
+                const clearOnMessage = function () {
+                    clearTimeout(timer);
+                    window.removeEventListener('message', clearOnMessage);
+                };
+                window.addEventListener('message', clearOnMessage);
+            });
+        });
+    </script>
+
 
 </body>
 
