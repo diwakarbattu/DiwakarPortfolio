@@ -8,6 +8,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyYZX_8z3t2tRKVCAqmjkCXbQi3oi-O6zGcDg2IQyRRkb6jlU9XRk-c5hriZpOGXgb1/exec";
 
   if (form) {
+    // Create a container for messages if it doesn't exist
+    let messageContainer = document.getElementById("form-message-container");
+    if (!messageContainer) {
+      messageContainer = document.createElement("div");
+      messageContainer.id = "form-message-container";
+      messageContainer.style.marginTop = "15px";
+      messageContainer.style.textAlign = "center";
+      messageContainer.style.fontWeight = "bold";
+      form.appendChild(messageContainer);
+    }
+
+    const showMessage = (text, isError = false) => {
+      messageContainer.textContent = text;
+      messageContainer.style.color = isError ? "#ff4444" : "#4CAF50"; // Red for error, Green for success
+
+      // Clear message after 5 seconds if it's a success message
+      if (!isError) {
+        setTimeout(() => {
+          messageContainer.textContent = "";
+        }, 5000);
+      }
+    };
+
     form.addEventListener("submit", function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -28,14 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 3. Validation
       if (!name || !email || !message) {
-        alert("Please fill in all required fields (Name, Email, Message).");
+        showMessage("Please fill in all required fields (Name, Email, Message).", true);
         return;
       }
 
       // Simple email validation
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address.");
+        showMessage("Please enter a valid email address.", true);
         return;
       }
 
@@ -44,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
       submitButton.value = "Sending...";
       submitButton.disabled = true;
       submitButton.style.opacity = "0.7";
+      messageContainer.textContent = ""; // Clear previous messages
 
       // 5. Send Data
       const formData = {
@@ -55,16 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       fetch(SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // Important for simple POST requests to GAS Web Apps from client-side
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(formData)
       })
         .then(response => {
-          // With mode: 'no-cors', we get an opaque response, so we can't check response.ok
-          // We assume success if no network error occurred.
-          alert("Thank you! Your message has been sent successfully.");
+          // With mode: 'no-cors', we assume success if no network error occurred.
+          showMessage("Thank you! Your message has been sent successfully.");
           form.reset();
           // Reset default values if needed by the template's visual logic
           phoneFn.value = "Phone";
@@ -72,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
           console.error("Error:", error);
-          alert("Something went wrong. Please try again later or email me directly.");
+          showMessage("Something went wrong. Please try again later.", true);
         })
         .finally(() => {
           // 6. UI Feedback - Reset
