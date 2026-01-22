@@ -15,7 +15,7 @@ $(document).ready(function () {
   function n(t, n) {
     var i = " " + t.className.replace(/[\t\r\n]/g, " ") + " ";
     if (e(t, n)) {
-      for (; i.indexOf(" " + n + " ") >= 0; ) i = i.replace(" " + n + " ", " ");
+      for (; i.indexOf(" " + n + " ") >= 0;) i = i.replace(" " + n + " ", " ");
       t.className = i.replace(/^\s+|\s+$/g, "");
     } else t.className += " " + n;
   }
@@ -138,13 +138,13 @@ $(document).ready(function () {
           function s(t) {
             p &&
               (t.preventDefault(),
-              t.stopPropagation(),
-              (mouseX = parseInt(t.clientX - d)),
-              (mouseY = parseInt(t.clientY - f)),
-              m.push({
-                x: mouseX,
-                y: mouseY,
-              }));
+                t.stopPropagation(),
+                (mouseX = parseInt(t.clientX - d)),
+                (mouseY = parseInt(t.clientY - f)),
+                m.push({
+                  x: mouseX,
+                  y: mouseY,
+                }));
           }
           (i.lineCap = "round"),
             (i.lineJoin = "round"),
@@ -393,18 +393,18 @@ $(document).ready(function () {
       });
     }),
     $(window).width() >= 768 &&
-      $(function () {
-        $(document).ready(function () {
+    $(function () {
+      $(document).ready(function () {
+        $(".full-page").css({
+          height: $(window).height() + "px",
+        });
+      }),
+        $(window).resize(function () {
           $(".full-page").css({
             height: $(window).height() + "px",
           });
-        }),
-          $(window).resize(function () {
-            $(".full-page").css({
-              height: $(window).height() + "px",
-            });
-          });
-      });
+        });
+    });
   //  $(function() {
   //     $(document).bind("contextmenu", function(t) {
   //         t.preventDefault()
@@ -430,8 +430,8 @@ $(document).ready(function () {
     function n(e) {
       (this.$elt = t(
         '<div class="nabpi n' +
-          e +
-          '"><div class="left wing"></div><div class="body"></div><div class="right wing"></div></div'
+        e +
+        '"><div class="left wing"></div><div class="body"></div><div class="right wing"></div></div'
       )),
         (this.elt = this.$elt[0]),
         (this.$wings = this.$elt.find(".wing")),
@@ -507,71 +507,5 @@ $(document).ready(function () {
             i();
           }, 40);
       });
-  })(jQuery),
-  jQuery(document).ready(function () {
-    jQuery("#submitquery").click(function (t) {
-      t.preventDefault();
-      var e = jQuery(this).parents("form"),
-        n = (e.attr("action"), /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/),
-        i = jQuery('<span class="error"></span>');
-      if (
-        (jQuery("p", e).removeClass("error"),
-        jQuery("span.error").remove(),
-        jQuery(".required", e).each(function () {
-          var t = jQuery(this).val(),
-            e = jQuery(this).parent();
-          ("" == t || "-1" == t) &&
-            e.addClass("error").append(i.clone().text("This Field Required")),
-            1 == jQuery(this).hasClass("email") &&
-              (n.test(t) ||
-                e
-                  .addClass("error")
-                  .append(i.clone().text("Enter valid email")));
-        }),
-        jQuery("span.error").length > 0)
-      )
-        jQuery("span.error").each(function () {
-          var t = 5,
-            e = jQuery(this).outerWidth(),
-            n = e + t;
-          jQuery(this)
-            .show()
-            .css({
-              display: "block",
-              opacity: 0,
-              right: -n + "px",
-            })
-            .animate(
-              {
-                right: -e + "px",
-                opacity: 1,
-              },
-              "slow"
-            );
-        });
-      else {
-        jQuery("#contact-form").children().hide(),
-          jQuery("#contact-form").append(
-            '<img class="loader" src="../images/bx_loader.gif"/>'
-          );
-        var o = jQuery.ajax({
-          url: "contact-submit.php",
-          type: "POST",
-          data: jQuery("#contact-form").serialize(),
-        });
-        o.done(function (t) {
-          jQuery(".loader").hide(),
-            jQuery(".success").remove(),
-            jQuery("#contact-form").append('<div class="success"></div>'),
-            jQuery(".success").html(t),
-            jQuery(".success").fadeIn(500);
-        }),
-          o.fail(function (t, e) {
-            jQuery("#contact-form").append('<div class="errmsg"></div>'),
-              jQuery(".errmsg").html(e),
-              jQuery(".errmsg").fadeIn(500);
-          });
-      }
-      t.preventDefault();
-    });
-  });
+  })(jQuery);
+
