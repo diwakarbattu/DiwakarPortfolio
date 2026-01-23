@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submitquery");
 
   // PLACEHOLDER: User needs to replace this with their actual Web App URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyYZX_8z3t2tRKVCAqmjkCXbQi3oi-O6zGcDg2IQyRRkb6jlU9XRk-c5hriZpOGXgb1/exec";
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyYZX_8z3t2tRKVCAqmjkCXbQi3oi-O6zGcDg2IQyRRkb6jlU9XRk-c5hriZpOGXgb1/exec";
 
   if (form) {
     // Create a container for messages if it doesn't exist
@@ -51,7 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // 3. Validation
       if (!name || !email || !message) {
-        showMessage("Please fill in all required fields (Name, Email, Message).", true);
+        showMessage(
+          "Please fill in all required fields (Name, Email, Phone, Message).",
+          true,
+        );
         return;
       }
 
@@ -74,18 +78,18 @@ document.addEventListener("DOMContentLoaded", function () {
         name: name,
         email: email,
         phone: phone,
-        message: message
+        message: message,
       };
 
       fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       })
-        .then(response => {
+        .then((response) => {
           // With mode: 'no-cors', we assume success if no network error occurred.
           showMessage("Thank you! Your message has been sent successfully.");
           form.reset();
@@ -93,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
           phoneFn.value = "Phone";
           messageFn.value = "Message";
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Error:", error);
           showMessage("Something went wrong. Please try again later.", true);
         })

@@ -31,10 +31,14 @@ html {
 body {
   height: 100%;
   background: url(../images/gry-bg.jpg);
-  font: 100 18px/140% Lato, sans-serif;
+  font:
+    100 18px/140% Lato,
+    sans-serif;
 }
 h1 {
-  font: 400 80px/140% Lato, serif;
+  font:
+    400 80px/140% Lato,
+    serif;
 }
 a:active,
 a:focus,
@@ -80,7 +84,9 @@ input::-moz-focus-inner {
 }
 .entry-header h2 {
   color: #ccc;
-  font: 100 40px/140% Lato, serif;
+  font:
+    100 40px/140% Lato,
+    serif;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -91,7 +97,9 @@ input::-moz-focus-inner {
 }
 .entry-header h2 span {
   display: block;
-  font: 600 30px/140% Lato, serif;
+  font:
+    600 30px/140% Lato,
+    serif;
 }
 .loaded .entry-header {
   display: none;
@@ -475,13 +483,18 @@ nav a {
   background: url(../images/home-bg.png) center -100px no-repeat;
 }
 #Header p {
-  font: 400 90px/100% "Dancing Script", cursive, serif;
+  font:
+    400 90px/100% "Dancing Script",
+    cursive,
+    serif;
   padding: 0 0 10px;
   margin: 0;
   color: #333;
 }
 #Header h1 {
-  font: 300 16px/140% Lato, serif;
+  font:
+    300 16px/140% Lato,
+    serif;
   color: #333;
 }
 nav a {
@@ -490,7 +503,9 @@ nav a {
   outline: 0;
   text-decoration: none;
   text-align: center;
-  font: 700 16px/140% Lato, serif;
+  font:
+    700 16px/140% Lato,
+    serif;
   color: #fff;
   z-index: 999;
 }
@@ -724,7 +739,9 @@ nav a:hover {
 }
 .fc-slideshow,
 .fc-slideshow img {
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.4), 0 0 0 10px #ccc;
+  box-shadow:
+    inset 0 0 3px rgba(0, 0, 0, 0.4),
+    0 0 0 10px #ccc;
 }
 #Header .color-row li:hover span {
   display: block;
@@ -1094,7 +1111,9 @@ ul.fc-slides li {
   bottom: 30px;
   padding: 0 10px;
   background: rgba(255, 81, 76, 0.8);
-  font: 300 15px/30px Lato, sans-serif;
+  font:
+    300 15px/30px Lato,
+    sans-serif;
   text-align: center;
   -webkit-border-top-right-radius: 20px;
   -webkit-border-bottom-left-radius: 20px;
@@ -1160,22 +1179,30 @@ ul.fc-slides li {
   background: url(../images/aboutme-top-bg.png) center 273px no-repeat;
 }
 #AboutScreen h2 {
-  font: 100 80px/140% Lato, serif;
+  font:
+    100 80px/140% Lato,
+    serif;
   color: #fff;
   margin: 0;
   font-weight: 300;
 }
 #AboutScreen h3 {
-  font: 300 16px/140% Lato, sans-serif;
+  font:
+    300 16px/140% Lato,
+    sans-serif;
   color: #c7fffd;
   margin: 0;
 }
 #AboutScreen .aboutme-contents {
-  font: 300 20px/140% "Roboto Slab", sans-serif;
+  font:
+    300 20px/140% "Roboto Slab",
+    sans-serif;
   color: #000;
 }
 #AboutScreen .aboutme-contents p {
-  font: 300 20px/130% "Roboto Slab", sans-serif;
+  font:
+    300 20px/130% "Roboto Slab",
+    sans-serif;
   color: #000;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
@@ -1191,7 +1218,9 @@ ul.fc-slides li {
   margin: 0 0 10px;
   padding: 0 0 10px 30px;
   list-style: none;
-  font: 300 16px/150% Lato, sans-serif;
+  font:
+    300 16px/150% Lato,
+    sans-serif;
   color: #333;
   float: left;
   display: block;
@@ -1214,7 +1243,9 @@ ul.fc-slides li {
   display: inline-block;
   padding: 12px 18px 12px 50px;
   margin: 0 10px 0 0;
-  font: 400 16px/130% "Roboto Slab", sans-serif;
+  font:
+    400 16px/130% "Roboto Slab",
+    sans-serif;
   color: #fff;
   background: url(../images/download-cta.png) 15px 9px no-repeat #9cb641;
   transition: all 0.3s ease-in-out;
@@ -1350,7 +1381,10 @@ ul.fc-slides li {
   box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.05);
 }
 #AboutScreen .battu-profile-pic-info h3 {
-  font: 400 16px/130% "Open Sans Condensed", "Arial Narrow", serif;
+  font:
+    400 16px/130% "Open Sans Condensed",
+    "Arial Narrow",
+    serif;
   color: #fff;
   text-transform: uppercase;
   position: relative;
@@ -1358,13 +1392,18 @@ ul.fc-slides li {
   margin: 0 60px;
   padding: 22px 0 0;
   height: 80px;
-  text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 0 1px #fff,
+    0 1px 2px rgba(0, 0, 0, 0.3);
 }
 #AboutScreen .battu-profile-pic-info p {
   padding: 8px 5px;
   margin: 0 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
-  font: italic 300 12px/130% "Open Sans Condensed", "Arial Narrow", serif;
+  font:
+    italic 300 12px/130% "Open Sans Condensed",
+    "Arial Narrow",
+    serif;
   color: #fff;
   box-shadow: none;
   letter-spacing: 2px;
@@ -1388,15 +1427,22 @@ ul.fc-slides li {
   margin: 7px auto 0;
   opacity: 0;
   outline: 0;
-  -webkit-transition: --webkit-transform 0.3s ease-in-out 0.2s,
-    opacity 0.3s ease-in-out 0.2s, background 0.2s linear 0s;
-  --moz-transition: --moz-transform 0.3s ease-in-out 0.2s,
-    opacity 0.3s ease-in-out 0.2s, background 0.2s linear 0s;
-  --o-transition: -o-transform 0.3s ease-in-out 0.2s,
-    opacity 0.3s ease-in-out 0.2s, background 0.2s linear 0s;
-  --ms-transition: -ms-transform 0.3s ease-in-out 0.2s,
-    opacity 0.3s ease-in-out 0.2s, background 0.2s linear 0s;
-  transition: transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s,
+  -webkit-transition:
+    --webkit-transform 0.3s ease-in-out 0.2s,
+    opacity 0.3s ease-in-out 0.2s,
+    background 0.2s linear 0s;
+  --moz-transition:
+    --moz-transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s,
+    background 0.2s linear 0s;
+  --o-transition:
+    -o-transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s,
+    background 0.2s linear 0s;
+  --ms-transition:
+    -ms-transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s,
+    background 0.2s linear 0s;
+  transition:
+    transform 0.3s ease-in-out 0.2s,
+    opacity 0.3s ease-in-out 0.2s,
     background 0.2s linear 0s;
   -webkit-transform: translateX(60px) rotate(90deg);
   -moz-transform: translateX(60px) rotate(90deg);
@@ -1416,7 +1462,8 @@ ul.fc-slides li {
   color: #fff;
 }
 #AboutScreen .battu-profile-pic-item:hover .battu-profile-pic-thumb {
-  box-shadow: inset 0 0 0 15px rgba(255, 255, 255, 0.5),
+  box-shadow:
+    inset 0 0 0 15px rgba(255, 255, 255, 0.5),
     0 1px 3px rgba(0, 0, 0, 0.2);
   -webkit-transform: rotate(-110deg);
   -moz-transform: rotate(-110deg);
@@ -1465,23 +1512,31 @@ ul.fc-slides li {
   margin: 0;
 }
 #MySkilsWrapper h2 {
-  font: 300 80px/140% Lato, serif;
+  font:
+    300 80px/140% Lato,
+    serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
 }
 #MySkilsWrapper h3 {
-  font: 300 18px/140% Lato, sans-serif;
+  font:
+    300 18px/140% Lato,
+    sans-serif;
   color: #ffffff;
   text-shadow: none;
   text-align: center;
 }
 #MySkils .my-skils-contents {
-  font: 300 20px/140% "Roboto Slab", sans-serif;
+  font:
+    300 20px/140% "Roboto Slab",
+    sans-serif;
   color: #000;
 }
 #MySkils .my-skils-contents p {
-  font: 300 20px/130% "Roboto Slab", sans-serif;
+  font:
+    300 20px/130% "Roboto Slab",
+    sans-serif;
   color: #000;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
@@ -1503,7 +1558,9 @@ ul.fc-slides li {
   padding: 6px 15px;
   color: #fff;
   margin: 4px;
-  font: 400 16px/35px "Roboto Slab", sans-serif;
+  font:
+    400 16px/35px "Roboto Slab",
+    sans-serif;
   -moz-border-radius-topright: 20px;
   -moz-border-radius-bottomleft: 20px;
   border-top-right-radius: 20px;
@@ -1584,7 +1641,9 @@ ul.fc-slides li {
   padding: 20px;
   border: 1px solid #e9e9e9;
   margin: 20px 0 30px;
-  font: 100 italic 18px/140% Lato, sans-serif;
+  font:
+    100 italic 18px/140% Lato,
+    sans-serif;
   text-align: center;
   -webkit-border-top-right-radius: 20px;
   -webkit-border-bottom-left-radius: 20px;
@@ -1598,7 +1657,9 @@ ul.fc-slides li {
 }
 #MySkilsWrapper #diagram,
 #MySkilsWrapper text {
-  font: 300 16px/130% "Roboto Slab", sans-serif;
+  font:
+    300 16px/130% "Roboto Slab",
+    sans-serif;
 }
 #MySkilsWrapper #diagram {
   position: relative;
@@ -1652,23 +1713,31 @@ ul.fc-slides li {
   margin: 0;
 }
 #My-ui-ux-process h2 {
-  font: 300 80px/140% Lato, serif;
+  font:
+    300 80px/140% Lato,
+    serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
 }
 #My-ui-ux-process h3 {
-  font: 300 18px/140% Lato, sans-serif;
+  font:
+    300 18px/140% Lato,
+    sans-serif;
   color: #ffffff;
   text-shadow: none;
   text-align: center;
 }
 #MyUiUxSkils .my-skils-contents {
-  font: 300 20px/140% "Roboto Slab", sans-serif;
+  font:
+    300 20px/140% "Roboto Slab",
+    sans-serif;
   color: #000;
 }
 #MyUiUxSkils .my-skils-contents p {
-  font: 300 20px/130% "Roboto Slab", sans-serif;
+  font:
+    300 20px/130% "Roboto Slab",
+    sans-serif;
   color: #000;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
@@ -1715,7 +1784,9 @@ ul.fc-slides li {
   padding: 0;
 }
 #MyWorksScreenWrapper h2 {
-  font: 300 80px/140% Lato, serif;
+  font:
+    300 80px/140% Lato,
+    serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
@@ -1723,7 +1794,9 @@ ul.fc-slides li {
   padding: 0;
 }
 #MyWorksScreenWrapper h3 {
-  font: 300 18px/140% Lato, sans-serif;
+  font:
+    300 18px/140% Lato,
+    sans-serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
@@ -1745,7 +1818,10 @@ ul.fc-slides li {
   text-shadow: none;
 }
 #MyWorksScreen .my-works-welcome-note {
-  font: 300 20px/40px "Open Sans Condensed", "Arial Narrow", serif;
+  font:
+    300 20px/40px "Open Sans Condensed",
+    "Arial Narrow",
+    serif;
   color: #fff;
   text-align: center;
 }
@@ -1758,7 +1834,10 @@ ul.fc-slides li {
   text-align: center;
 }
 .portfolioFilter a {
-  font: 300 18px/40px "Open Sans Condensed", "Arial Narrow", serif;
+  font:
+    300 18px/40px "Open Sans Condensed",
+    "Arial Narrow",
+    serif;
   color: #fff;
   padding: 0 25px 0 0;
   text-transform: uppercase;
@@ -1857,7 +1936,9 @@ ul.fc-slides li {
   top: 0px;
   text-align: center;
   padding: 20px;
-  font: italic 400 14px/130% "Roboto Slab", sans-serif;
+  font:
+    italic 400 14px/130% "Roboto Slab",
+    sans-serif;
   color: #fff;
   z-index: 999;
   opacity: 0;
@@ -1995,7 +2076,9 @@ ul.fc-slides li {
   color: #888;
   text-decoration: none;
   transition: all 0.2s;
-  font: 300 14px/130% Lato, sans-serif;
+  font:
+    300 14px/130% Lato,
+    sans-serif;
 }
 #ToggleNav li a:focus,
 #ToggleNav li a:hover {
@@ -2133,7 +2216,11 @@ body.loaded #toggle {
 }
 .fancybox-error {
   color: #444;
-  font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:
+    14px/20px "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   margin: 0;
   padding: 15px;
   white-space: nowrap;
@@ -2263,7 +2350,11 @@ body.loaded #toggle {
 }
 .fancybox-title {
   visibility: hidden;
-  font: 400 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:
+    400 13px/20px "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   position: relative;
   text-shadow: none;
   z-index: 8050;
@@ -2487,7 +2578,10 @@ body.loaded #toggle {
 }
 .fancybox-title-inside-wrap {
   background: #000;
-  font: 300 italic 14px/130% Cambria, Georgia, serif;
+  font:
+    300 italic 14px/130% Cambria,
+    Georgia,
+    serif;
   font-weight: 300;
   font-style: italic;
   color: #ccc;
@@ -2611,7 +2705,9 @@ body.loaded #toggle {
   padding: 0;
 }
 #ContactmeWrapper h2 {
-  font: 300 80px/140% Lato, serif;
+  font:
+    300 80px/140% Lato,
+    serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
@@ -2619,7 +2715,9 @@ body.loaded #toggle {
   padding: 0;
 }
 #ContactmeWrapper h3 {
-  font: 300 18px/140% Lato, sans-serif;
+  font:
+    300 18px/140% Lato,
+    sans-serif;
   color: #fff;
   text-shadow: none;
   text-align: center;
@@ -2627,7 +2725,9 @@ body.loaded #toggle {
   padding: 0;
 }
 #ContactmeWrapper .my-contact-contents {
-  font: 300 20px/140% "Roboto Slab", sans-serif;
+  font:
+    300 20px/140% "Roboto Slab",
+    sans-serif;
   color: #000;
 }
 #ContactmeWrapper .contact-lhs-box {
@@ -2647,7 +2747,9 @@ body.loaded #toggle {
 #ContactmeWrapper .contact-lhs-box h3 {
   padding: 0 0 5px;
   margin: 0;
-  font: 300 28px/130% Lato, sans-serif;
+  font:
+    300 28px/130% Lato,
+    sans-serif;
   color: #000;
   text-transform: uppercase;
   text-align: left;
@@ -2655,14 +2757,18 @@ body.loaded #toggle {
 #ContactmeWrapper .contact-lhs-box p {
   padding: 0;
   margin: 0;
-  font: 300 16px/130% Lato, sans-serif;
+  font:
+    300 16px/130% Lato,
+    sans-serif;
   color: #000;
 }
 #ContactmeWrapper .contact-lhs-box p a {
   color: #7d9f06;
 }
 #ContactMe .my-contact-contents p {
-  font: 300 20px/130% "Roboto Slab", sans-serif;
+  font:
+    300 20px/130% "Roboto Slab",
+    sans-serif;
   color: #333;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
@@ -2676,7 +2782,9 @@ body.loaded #toggle {
 }
 #minutes,
 #seconds {
-  font: 700 18px/130% Lato, sans-serif;
+  font:
+    700 18px/130% Lato,
+    sans-serif;
 }
 #ContactmeWrapper p {
   color: #fff;
@@ -2687,7 +2795,7 @@ body.loaded #toggle {
 }
 #ContactmeWrapper .contact-textarea-box textarea {
   resize: none;
-  min-height: 150px;
+  min-height: 140px;
   border-radius: 0 20px;
   --webkit-border-top-right-radius: 20px;
   --webkit-border-bottom-left-radius: 20px;
@@ -2695,7 +2803,7 @@ body.loaded #toggle {
   -moz-border-radius-bottomleft: 20px;
 }
 #ContactmeWrapper .form-control {
-  opacity: 0.9;
+  opacity: 1;
   border-radius: 0 20px;
   border: 1px solid #97be0d;
   --webkit-border-top-right-radius: 20px;
@@ -2710,7 +2818,9 @@ body.loaded #toggle {
   width: 220px;
   background: #7d9f06;
   padding: 15px;
-  font: 400 20px/130% "Roboto Slab", sans-serif;
+  font:
+    400 20px/130% "Roboto Slab",
+    sans-serif;
   color: #fff;
   border: 0;
   height: auto;
@@ -2775,11 +2885,15 @@ body.loaded #toggle {
   background-position: -183px -36px;
 }
 #ContactmeWrapper .error {
-  font: italic 300 12px/130% Lato, sans-serif;
+  font:
+    italic 300 12px/130% Lato,
+    sans-serif;
   color: #ef7d1a;
 }
 #ContactmeWrapper .success {
-  font: italic 300 30px/130% Lato, sans-serif;
+  font:
+    italic 300 30px/130% Lato,
+    sans-serif;
   color: #333;
   padding: 80px 0 0;
 }
@@ -2816,17 +2930,23 @@ body.loaded #toggle {
 #Footer h2 {
   padding: 0 0 10px;
   margin: 0;
-  font: 100 22px/130% Lato, sans-serif;
+  font:
+    100 22px/130% Lato,
+    sans-serif;
   color: #ffffff;
   text-transform: uppercase;
   text-align: left;
   font-weight: 300;
 }
 #Footer h3 {
-  font: 100 16px/130% Lato, sans-serif;
+  font:
+    100 16px/130% Lato,
+    sans-serif;
 }
 #Footer p {
-  font: 100 12px/130% Lato, sans-serif;
+  font:
+    100 12px/130% Lato,
+    sans-serif;
 }
 #Footer ul {
   margin: 0;
@@ -2841,7 +2961,9 @@ body.loaded #toggle {
   margin: 0;
   padding: 0 0 8px 15px;
   list-style: none;
-  font: 300 15px/130% Lato, sans-serif;
+  font:
+    300 15px/130% Lato,
+    sans-serif;
   color: #ffffff;
   background: url(../images/footer-links-bg.png) 0 5px no-repeat;
   transition: all 0.3s ease-in-out;
@@ -2874,7 +2996,9 @@ body.loaded #toggle {
   padding: 0px 20px;
 }
 .ui-ux-text li {
-  font: 300 16px / 150% Lato, sans-serif;
+  font:
+    300 16px / 150% Lato,
+    sans-serif;
   color: #333;
   margin: 5px 0px;
   color: #000;
@@ -2906,8 +3030,8 @@ body.loaded #toggle {
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
   /* Border radius */
   --radius-sm: 8px;
@@ -3093,4 +3217,7 @@ body.loaded #toggle {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+.pr-0 {
+  padding-right: 0 !important;
 }
