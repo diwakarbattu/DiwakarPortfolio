@@ -484,7 +484,7 @@ nav a {
 }
 #Header p {
   font:
-    400 90px/100% "Dancing Script",
+    400 60px/100% "Dancing Script",
     cursive,
     serif;
   padding: 0 0 10px;
@@ -1238,13 +1238,17 @@ ul.fc-slides li {
   float: right;
   background: url(../images/click-here.png) 0 bottom no-repeat;
 }
-#AboutScreen .download-resume-cta {
-  float: right;
+/* #AboutScreen .download-resume {} */
+#content .download-resume {
   display: inline-block;
+  position: fixed;
+  top: 3%;
+  right: 10%;
+  z-index: 10000;
   padding: 12px 18px 12px 50px;
   margin: 0 10px 0 0;
   font:
-    400 16px/130% "Roboto Slab",
+    400 15px/130% "Roboto Slab",
     sans-serif;
   color: #fff;
   background: url(../images/download-cta.png) 15px 9px no-repeat #9cb641;
@@ -1256,7 +1260,7 @@ ul.fc-slides li {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }
-#AboutScreen .download-resume-cta:hover {
+#content .download-resume:hover {
   background: url(../images/download-cta.png) 15px 12px no-repeat #50afab;
   transition: all 0.3s ease-in-out;
   color: #fff;
