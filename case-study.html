@@ -3,11 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXX');
+    </script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=GTM-XXXX' + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-XXXX');
+    </script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Banking Dashboard Redesign | Case Study | Diwakar Battu</title>
+    <link rel="icon" href="images/ficon.png" type="image/vnd.microsoft.icon" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/banking-case-study.css">
+    <link rel="stylesheet" href="css/case-study.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/responsive-style.css">
@@ -20,23 +39,56 @@
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
-    <section id="Header" class="full-page">
+
+    <!-- Modern Navbar — styles in css/style.css -->
+    <nav class="navbar-modern" id="navbarModern" aria-label="Main navigation">
+        <div class="nav-inner">
+
+            <!-- Logo — fixed on the left -->
+            <a class="nav-logo" href="index.html" aria-label="Home">
+                <img src="images/logo.png" alt="Diwakar Battu Portfolio Logo">
+            </a>
+
+            <!-- Right Controls: buttons + ToggleNav -->
+            <div class="nav-controls">
+                <!-- Case Study outline button -->
+                <a href="index.html" class="nav-btn nav-btn-outline" id="navCaseStudy">
+                    Back to Home
+                </a>
+                <!-- Download Resume solid button — icon only label -->
+                <a href="images/Diwakar_12_web-Developer.pdf" download class="nav-btn nav-btn-solid"
+                    id="navDownloadResume">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;flex-shrink:0;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Resume
+                </a>
+
+
+            </div>
+
+        </div>
+    </nav>
+
+    <script>
+        (function () {
+            var navbar = document.getElementById('navbarModern');
+            /* Add .scrolled class when user scrolls past 10px */
+            function onScroll() {
+                navbar.classList.toggle('scrolled', window.scrollY > 10);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+
+    <section id="Header" class="full-page" style="padding-top:80px;">
 
         <div class="container">
 
-            <div class="case-head">
-
-                <div class=" logo"><img src="images/logo.png" alt="Logo"></div>
-
-                <nav class="case-study-nav">
-                    <a href="images/Diwakar_12_web-Developer.pdf" download class="liquid-glass-btn ">
-                        <span>📥</span> Download Resume
-                    </a>
-                    <a href="index.html"
-                        style="background: var(--banking-primary); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 700;">←
-                        Back to Home</a>
-                </nav>
-            </div>
             <div class="row">
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 battu-designer-home"
@@ -44,13 +96,13 @@
 
                     <div class="case-study-container">
                         <div class="meta-item" style="margin-bottom: 20px;">
-                            <label>Case Study</label>
+                            <label>Case Study - Product Design</label>
                         </div>
 
                         <h1 class="case-study-title">Digital Banking Dashboard Redesign</h1>
                         <p class="hero-summary">
-                            Redesigning a complex banking interface into a streamlined, data-driven experience that
-                            improves usability, engagement, and financial clarity.
+                            Redesigning a complex banking interface into a intuitive, data-driven experience that
+                            improves usability, and financial clarity.
                         </p>
                         <h3 class="section-title">12+ Years Experience | Banking | SaaS | Enterprise UX</h3>
                         <div class="hero-meta">
@@ -77,18 +129,54 @@
                 </div>
 
             </div>
-            <h3 class="text3">This project was part of a design test for a fintech company. The task was to design a
-                new feature
-                for an online banking website. The feature should help users understand how they use their credit or
-                debit cards.</h3>
-            <h3 class="text3">I created an interactive prototype that includes the main page and the key workflow of the
-                feature. In this case study, I explain my design steps and how my ideas developed during this short
-                project.</h3>
+
+
         </div>
 
     </section>
 
     <main class="case-study-container">
+        <section class="cs-section">
+
+            <div>
+                <h2>Project Overview</h2>
+                <p>This project was part of a design test for a fintech company. The task was to design a
+                    new feature
+                    for an online banking website. The feature should help users understand how they use their credit or
+                    debit cards.</p>
+                <p>I created an interactive prototype that includes the main page and the key workflow of the
+                    feature. In this case study, I explain my design steps and how my ideas developed during this short
+                    project.</p>
+
+                <h4 class="section-title">The Problem
+                </h4>
+                <p class="section-intro">Users struggled to understand their financial data due to interface complexity
+                    and
+                    poor information hierarchy.</p>
+
+                <ul class="persona-list">
+                    <li><b>Cluttered Interface</b> : Too much information displayed at once with no clear visual
+                        hierarchy,
+                        making it hard to find important data.
+
+                    </li>
+                    <li><b>Poor Navigation
+                        </b> : Users couldn't easily track transactions or understand spending patterns across different
+                        card
+                        categories.</li>
+                    <li><b>Cognitive Overload</b> : Complex layouts and unclear data visualization increased cognitive
+                        load
+                        and user
+                        frustration.</li>
+                    <li><b>Limited Insights</b> : Lack of spending insights and analytics made it difficult for users to
+                        manage their
+                        finances
+                        effectively.</li>
+                </ul>
+            </div>
+
+        </section>
+
         <section class="cs-section summary-section">
             <div class="summary-grid">
                 <div class="summary-card">
@@ -188,8 +276,8 @@
                 <div>
                     <h2>User Research</h2>
 
-                    <p>I conducted an internal survey by sharing it with existing users, Business Analysts (BAs), and
-                        Project Managers. This helped me gather feedback from both user and business perspectives. I
+                    <p>I conducted internal surveys with existing users, Business Analysts (BAs), and Project Managers.
+                        This helped me gather feedback from both user and business perspectives. I
                         also conducted a few short one-on-one interviews with internal stakeholders and banking
                         professionals to understand their experiences.</p>
                     <p>I asked questions about users' age, how often they use online banking, and which features they
@@ -217,18 +305,30 @@
                     <h3 class="mt-0 mb-0">Sarah, 28</h3>
                     <p><strong>Project Manager</strong></p>
                     <p>"I want to quickly see where my money goes without searching through different menus."</p>
-                    <ul class="card-ul">
+                    <h4 class="section-title">Goals</h4>
+                    <ul class="persona-list">
                         <li>Needs fast transaction searching</li>
-                        <li>Create a budget to save money</li>
+                        <li>Create a budgets to save money</li>
+                    </ul>
+                    <h4 class="section-title">Frustrations</h4>
+                    <ul class="persona-list">
+                        <li>Too many clicks to find transaction details</li>
+                        <li>Unclear spending categories and insights</li>
                     </ul>
                 </div>
                 <div class="process-card card" style="background: #fff;">
                     <h3 class="mt-0 mb-0">David, 45</h3>
                     <p><strong>Business Analysts (BA)</strong></p>
                     <p>"I use multiple cards, so I need a clear layout and an easy way to filter transactions."</p>
-                    <ul class="card-ul">
+                    <h4 class="section-title">Goals</h4>
+                    <ul class="persona-list">
                         <li>Requires account switching in one tap</li>
                         <li>Easy payment and money transfer</li>
+                    </ul>
+                    <h4 class="section-title">Frustrations</h4>
+                    <ul class="persona-list">
+                        <li>Difficulty in tracking card usage across accounts</li>
+                        <li>Confusing navigation and cluttered interface</li>
                     </ul>
                 </div>
             </div>
@@ -308,8 +408,7 @@
 
         <section class="cs-section">
             <h2>Final UI Prototype</h2>
-            <p>After validating the wireframes, I moved to high-fidelity UI design. The final interface was designed to
-                be clean, modern, and easy to understand, following a minimal and structured layout</p>
+
             <p>After validating the wireframes, I moved to high-fidelity UI design. The final interface was designed to
                 be clean, modern, and easy to understand, following a minimal and structured layout</p>
             <p>The final design focuses on clarity, visual hierarchy, and usability, helping users quickly understand
@@ -375,9 +474,17 @@
             <p>This design challenge was a great learning experience for me. Although there is still room for
                 improvement in my design, the most important outcome was gaining valuable experience in applying a
                 solution-based design approach to solve real user problems.</p>
+            <ul class="ui-ux-text">
+                <li> Created intuitive dashboard with clear information hierarchy</li>
+                <li>Improved data visualization for spending insights</li>
+                <li>Reduced navigation steps for common tasks</li>
+                <li>Implemented modern design system and component library</li>
+
+            </ul>
             <p>Through this project, I improved my understanding of user needs, created effective user flows, and
                 designed intuitive interfaces.</p>
-            <p class="font2">And thank you for reading through my design challenge experience! I will keep sharing
+
+            <p class="font2">Thank you for taking the time to review this case study.! I will keep sharing
                 my design
                 thoughts along this journey.
 
@@ -386,9 +493,9 @@
 
     </main>
 
-    <footer style="text-align: center; padding: 60px 0; background: var(--banking-primary); color: white;">
+    <footer style="text-align: center; padding: 60px 0; background: #1d1d1f; color: white;">
         <p>Diwakar Battu | UI/UX & Product Designer</p>
-        <a href="index.html" style="color: var(--banking-accent);">Back to Home</a>
+        <a href='/' style='color: var(--accent);'>Back to Home</a>
     </footer>
 
     <script>

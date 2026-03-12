@@ -1,19 +1,33 @@
 :root {
-  --banking-primary: #1a237e;
+  --primary: #00234e;
   /* Deep Indigo */
-  --banking-secondary: #3949ab;
-  --banking-accent: #00bcd4;
-  --banking-bg: #f8f9fa;
-  --banking-text: #212121;
-  --banking-text-light: #757575;
+  --secondary-color: #00bcd4;
+  --bg: #f8f9fa;
+  --text: #212121;
   --white: #ffffff;
   --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   --swiss-font: "Inter", "Lato", sans-serif;
+  --accent-color: #42a5f5;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --text-lighter: #9ca3af;
+  --bg-white: #ffffff;
+  --bg-light: #f9fafb;
+  --bg-lighter: #f3f4f6;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-family:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --border-radius: 12px;
 }
 
 body.banking-page {
-  background-color: var(--banking-bg);
-  color: var(--banking-text);
+  background-color: var(--bg);
+  color: var(--text);
   font-family: var(--swiss-font);
   line-height: 1.6;
 }
@@ -33,7 +47,7 @@ body.banking-page {
   background: rgba(255, 255, 255, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  color: var(--banking-primary);
+  color: var(--primary);
   font-weight: 600;
   font-size: 14px;
   text-decoration: none;
@@ -50,7 +64,7 @@ body.banking-page {
   border: 1px solid rgba(26, 35, 126, 0.4);
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  color: var(--banking-primary);
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -84,7 +98,7 @@ body.banking-page {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 24px;
-  color: var(--banking-primary) !important;
+  color: var(--primary) !important;
 }
 
 /* Hero Section */
@@ -100,16 +114,16 @@ body.banking-page {
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: 24px;
-  color: var(--banking-primary);
+  color: var(--primary);
 }
 
 .hero-summary {
-  font-size: 24px !important;
+  font-size: 22px !important;
   font-weight: 300;
   max-width: 90%;
   margin-bottom: 48px;
   line-height: 36px !important;
-  color: var(--banking-text-light);
+  color: var(--text-light);
 }
 
 .hero-meta {
@@ -121,21 +135,21 @@ body.banking-page {
 .meta-item label {
   display: block;
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   font-weight: 700;
-  color: var(--banking-primary);
+  color: var(--primary);
   margin-bottom: 8px;
 }
 
 .meta-item span {
   font-size: 16px;
-  color: var(--banking-text);
+  color: var(--text);
 }
 
 .text3 {
   font-size: 17px;
   line-height: 25px;
-  color: var(--banking-text);
+  color: var(--text);
   margin-top: 15px;
 
   display: block;
@@ -155,7 +169,7 @@ body.banking-page {
   font-size: 15px;
   line-height: 26px;
   margin-left: 15px;
-  color: var(--banking-text-light);
+  color: var(--text-light);
 }
 .cs-section h2 {
   font-size: 24px;
@@ -172,7 +186,7 @@ body.banking-page {
   bottom: 0;
   width: 60px;
   height: 4px;
-  background: var(--banking-accent);
+  background: var(--secondary-color);
 }
 
 .content-grid {
@@ -198,7 +212,7 @@ body.banking-page {
 }
 
 .persona-card h3 {
-  color: var(--banking-primary);
+  color: var(--primary);
   margin-bottom: 15px;
 }
 .font2 {
@@ -227,7 +241,7 @@ body.banking-page {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: all 0.3s ease;
-  border-top: 4px solid var(--banking-primary);
+  border-top: 4px solid var(--primary);
 }
 
 .summary-card:hover {
@@ -241,7 +255,7 @@ body.banking-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--banking-bg);
+  background: var(--bg);
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -249,14 +263,14 @@ body.banking-page {
 }
 
 .summary-card h3 {
-  color: var(--banking-primary);
+  color: var(--primary);
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
 .summary-card p {
-  color: var(--banking-text-light);
+  color: var(--text-light);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -273,6 +287,27 @@ body.banking-page {
   display: block;
 }
 
+.persona-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.persona-list li {
+  padding: 0.5rem 0;
+  color: var(--text-light);
+  font-size: 1.7rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.persona-list li:before {
+  content: "✓";
+  position: absolute;
+  left: -5px;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
 /* Results grid */
 .results-grid {
   display: grid;
@@ -283,7 +318,7 @@ body.banking-page {
 .result-item {
   text-align: center;
   padding: 30px;
-  background: var(--banking-primary);
+  background: var(--primary);
   color: var(--white);
   border-radius: 12px;
 }
@@ -366,14 +401,14 @@ body.banking-page {
 }
 
 .carousel-dots .dot.active {
-  background-color: var(--banking-primary);
+  background-color: var(--primary);
   width: 12px;
   height: 12px;
 }
 
 .carousel-dots .dot:hover {
   transform: scale(1.2);
-  border-color: var(--banking-primary);
+  border-color: var(--primary);
 }
 
 /* Responsive */

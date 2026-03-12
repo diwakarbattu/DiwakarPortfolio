@@ -2,7 +2,6 @@
 <html lang="en" no-js>
 
 <head>
-
     <meta charset="UTF-8">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"></script>
     <script>
@@ -11,6 +10,7 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXX');
     </script>
+
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -21,6 +21,8 @@
                     'https://www.googletagmanager.com/gtm.js?id=GTM-XXXX' + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-XXXX');
     </script>
+
+
     <meta name="google-site-verification" content="cxVEd8U1u1NxBuTzPfq4WWJaBJXdacKG70fsjWOJznc" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Diwakar Battu | UI/UX Designer & Front-End Developer | Hyderabad Bangalore Pune </title>
@@ -39,16 +41,6 @@
 
     <meta name="keywords"
         content="UI UX designer Hyderabad,  Product designer India,Front-End Developer, Web Designer, Portfolio, React, Figma, User Experience, User Interface, Responsive Design,Front end developer portfolio, UI UX Designer Bangalore, UI UX Designer Pune, Designer India, Figma Designer, UX Portfolio India,  Frontend UI Developer, Diwakar Battu" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
 
     <meta name="author" content="Diwakar (Battu)" />
     <meta name="robots" content="index" />
@@ -77,9 +69,54 @@
         <div class="loader-section section-right"></div>
     </div>
     <div id="content">
-        <a class="btn download-resume" href="images/Diwakar_12_web-Developer.pdf" download>
-            Download Resume
-        </a>
+        <!-- Modern Navbar — styles in css/style.css -->
+        <nav class="navbar-modern" id="navbarModern" aria-label="Main navigation">
+            <div class="nav-inner">
+
+                <!-- Logo — fixed on the left, no movement on scroll -->
+                <a class="nav-logo" href="#" aria-label="Home">
+                    <img src="images/logo.png" alt="Diwakar Battu Portfolio Logo">
+                </a>
+
+                <!-- Right Controls: buttons + hamburger -->
+                <div class="nav-controls">
+                    <!-- Case Study outline button -->
+                    <a href="case-study.html" class="nav-btn nav-btn-outline" id="navCaseStudy">
+                        Case Study
+                    </a>
+                    <!-- Download Resume solid button — icon + Resume -->
+                    <a href="images/Diwakar_12_web-Developer.pdf" download class="nav-btn nav-btn-solid"
+                        id="navDownloadResume">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="margin-right:6px;flex-shrink:0;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Resume
+                    </a>
+
+                    <div id="ToggleNav">
+                        <a href="#menu" id="toggle"><span></span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="#Header">&uarr; Home</a></li>
+                                <li><a href="#AboutScreen">About me</a></li>
+                                <li><a href="#MySkilsScreen">My Skills</a></li>
+                                <li><a href="#My-ui-ux-process">My UI UX Process</a></li>
+                                <li><a href="case-study.html">My Case Studie</a></li>
+                                <li><a href="#MyWorksScreen">My Works</a></li>
+                                <li><a href="#ContactmeScreen">Contact me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+
         <div id="MainWrapper" class="container-fluid" style="display:none;">
             <canvas style="position: absolute; top:0; z-index:999;" id="canvas" width=500 height=300></canvas>
             <!-- Header Begin -->
@@ -88,7 +125,7 @@
                 <div class="container">
 
                     <div class="row">
-                        <div class="logo"><img src="images/logo.png" alt="Logo"></div>
+
 
                         <div class="col-xs-12 col-sm-5 col-md-6 col-lg-5 col-lg-offset-1">
                             <div class="battu-designer-dec">
@@ -1179,24 +1216,6 @@
                 </div>
             </div>
             <!-- Contact me Wrapper Section End -->
-
-
-            <!-- Toogle menu Begin -->
-            <div id="ToggleNav">
-                <a href="#menu" id="toggle"><span></span></a>
-                <div id="menu">
-                    <ul>
-                        <li><a href="#Header">&uarr; Home</a></li>
-                        <li><a href="#AboutScreen">About me</a></li>
-                        <li><a href="#MySkilsScreen">My Skills</a></li>
-                        <li><a href="#My-ui-ux-process">My UI UX Process</a></li>
-                        <li><a href="case-study.html">My Case Studie</a></li>
-                        <li><a href="#MyWorksScreen">My Works</a></li>
-                        <li><a href="#ContactmeScreen">Contact me</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Toogle menu End -->
 
             <!-- <a class="ribbons" href="" style="width:106px;height:92px;position:fixed;top:0px;left:0px;z-index:999;text-indent:-9999px;background: url(http://www.bestcss.in/ribbons/black-left.png) no-repeat;" target="_blank" rel="noopener noreferrer">BestCSS Web Gallery</a>
 

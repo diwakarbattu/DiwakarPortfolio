@@ -1067,7 +1067,7 @@ nav a:hover {
   -webkit-perspective: 1200px;
   -moz-perspective: 1200px;
   perspective: 1200px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .fc-slideshow nav {
@@ -1448,7 +1448,7 @@ ul.fc-slides li {
 }
 
 /* #AboutScreen .download-resume {} */
-#content .download-resume {
+/* #content .download-resume {
   display: inline-block;
   position: fixed;
   top: 3%;
@@ -1468,7 +1468,7 @@ ul.fc-slides li {
   -moz-border-radius-bottomleft: 20px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-}
+} */
 
 #content .download-resume:hover {
   background: url(../images/download-cta.png) 15px 12px no-repeat #50afab;
@@ -2382,9 +2382,9 @@ ul.fc-slides li {
 }
 
 #ToggleNav li a {
-  padding: 10px 5px;
+  padding: 0px 5px;
   display: block;
-  color: #888;
+  color: #3f3f3f;
   text-decoration: none;
   transition: all 0.2s;
   font:
@@ -2394,8 +2394,8 @@ ul.fc-slides li {
 
 #ToggleNav li a:focus,
 #ToggleNav li a:hover {
-  background: #e9e9e9;
-  color: #000;
+  font-weight: 300;
+  color: #00234e;
 }
 
 #toggle {
@@ -3374,7 +3374,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 }
 
 #Footer {
-  background: #111;
+  background: #1d1d1f;
   padding: 30px 0;
 }
 
@@ -3601,7 +3601,6 @@ only screen and (min-device-pixel-ratio: 1.5) {
   color: var(--color-text-muted);
 }
 
-
 .bullet {
   width: 6px;
   height: 6px;
@@ -3684,4 +3683,356 @@ only screen and (min-device-pixel-ratio: 1.5) {
 
 .pr-0 {
   padding-right: 0 !important;
+}
+
+/* ============================================================
+   MODERN NAVBAR — Apple / Stripe Style
+   ============================================================
+   Glassmorphism fixed navbar with:
+   - backdrop-filter blur
+   - soft shadow that deepens on scroll
+   - pill-shaped CTA buttons with hover micro-animations
+   - SVG hamburger for mobile with animated toggle
+   - Slide-down mobile drawer
+   - Full dark-theme support (body.dark-theme)
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. NAVBAR BASE
+   ---------------------------------------------------------- */
+.navbar-modern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+
+  /* Glassmorphism background */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  /* Subtle border + soft shadow */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+
+  /* Smooth transition on scroll */
+  transition: background 0.36s ease, box-shadow 0.36s ease, height 0.36s ease;
+}
+
+/* Scrolled state: tighter, more opaque, deeper shadow */
+.navbar-modern.scrolled {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10);
+  height: 56px;
+}
+
+/* ----------------------------------------------------------
+   2. INNER LAYOUT WRAPPER
+   ---------------------------------------------------------- */
+.navbar-modern .nav-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   3. LOGO — always stays on the left, no movement
+   ---------------------------------------------------------- */
+.navbar-modern .nav-logo {
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navbar-modern .nav-logo img {
+  height: 45px;
+  width: auto;
+  display: block;
+  transition: height 0.36s ease;
+}
+
+/* Slightly smaller logo when scrolled */
+.navbar-modern.scrolled .nav-logo img {
+  height: 30px;
+}
+
+/* ----------------------------------------------------------
+   4. RIGHT CONTROLS WRAPPER
+   ---------------------------------------------------------- */
+.navbar-modern .nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   5. NAV BUTTONS — shared base
+   ---------------------------------------------------------- */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+
+  /* Apple-style pill shape */
+  border-radius: 980px;
+
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+
+  /* Micro-animation on hover */
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.22s ease;
+}
+
+/* ----------------------------------------------------------
+   5a. Outline button — "Case Study"
+   ---------------------------------------------------------- */
+.nav-btn-outline {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.18);
+  color: #1d1d1f;
+}
+
+.nav-btn-outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.28);
+  color: #1d1d1f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+.nav-btn-outline:active {
+  transform: scale(0.97);
+}
+
+/* ----------------------------------------------------------
+   5b. Solid button — "Download Resume"
+   ---------------------------------------------------------- */
+.nav-btn-solid {
+  background: #1d1d1f;
+  border-color: #1d1d1f;
+  color: #fff;
+}
+
+.nav-btn-solid:hover {
+  background: #3a3a3c;
+  border-color: #3a3a3c;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+.nav-btn-solid:active {
+  transform: scale(0.97);
+}
+
+/* ----------------------------------------------------------
+   6. HAMBURGER BUTTON — visible on mobile only
+   ---------------------------------------------------------- */
+.nav-hamburger {
+  display: none;
+  /* shown via media query below */
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.nav-hamburger:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* SVG icons inside hamburger */
+.nav-hamburger svg {
+  display: block;
+}
+
+/* Default: show open icon, hide close icon */
+.nav-hamburger .icon-close {
+  display: none;
+}
+
+/* When open: swap icons */
+.nav-hamburger.open .icon-open {
+  display: none;
+}
+
+.nav-hamburger.open .icon-close {
+  display: block;
+}
+
+/* ----------------------------------------------------------
+   7. MOBILE DRAWER
+   ---------------------------------------------------------- */
+.nav-mobile-drawer {
+  display: none;
+  /* toggled to flex via .open class */
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+
+  /* Glassmorphism panel */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  padding: 16px 24px 24px;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9998;
+
+  /* Slide-in animation */
+  transform: translateY(-12px);
+  opacity: 0;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+/* Open state */
+.nav-mobile-drawer.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Full-width buttons inside drawer */
+.nav-mobile-drawer .nav-btn {
+  width: 100%;
+  border-radius: 14px;
+  padding: 12px 20px;
+  font-size: 15px;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------------
+   8. PUSH PAGE CONTENT BELOW FIXED NAVBAR
+   ---------------------------------------------------------- */
+#content {
+  padding-top: 64px;
+}
+
+/* ----------------------------------------------------------
+   9. DARK THEME OVERRIDES  (body.dark-theme)
+   ---------------------------------------------------------- */
+
+/* Navbar */
+body.dark-theme .navbar-modern {
+  background: rgba(18, 18, 28, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.32);
+}
+
+body.dark-theme .navbar-modern.scrolled {
+  background: rgba(18, 18, 28, 0.90);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.48);
+}
+
+/* Outline button */
+body.dark-theme .nav-btn-outline {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #f5f5f7;
+}
+
+body.dark-theme .nav-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+/* Solid button */
+body.dark-theme .nav-btn-solid {
+  background: #f5f5f7;
+  border-color: #f5f5f7;
+  color: #1d1d1f;
+}
+
+body.dark-theme .nav-btn-solid:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #1d1d1f;
+}
+
+/* Hamburger */
+body.dark-theme .nav-hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile drawer */
+body.dark-theme .nav-mobile-drawer {
+  background: rgba(18, 18, 28, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ----------------------------------------------------------
+   10. RESPONSIVE — Mobile (≤ 767px)
+   ---------------------------------------------------------- */
+@media (max-width: 767px) {
+
+  /* Hide desktop buttons, show hamburger */
+  .navbar-modern .nav-btn-outline,
+  .navbar-modern .nav-btn-solid {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   END MODERN NAVBAR
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   TOGGLENAV — inline alignment inside .nav-controls
+   Override the original position:fixed so it sits naturally
+   in the navbar flex row, right after the Download button.
+   ---------------------------------------------------------- */
+
+/* Reset fixed positioning — let flexbox place it */
+#ToggleNav {
+  position: relative;
+  top: auto;
+  right: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* The dropdown panel drops below the toggle icon */
+#ToggleNav #menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  left: auto;
+  min-width: 180px;
+  z-index: 10000;
 }
