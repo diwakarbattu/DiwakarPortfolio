@@ -3474,15 +3474,17 @@ body.loaded #toggle {
   position: absolute;
   top: -152px;
   right: 0;
+  z-index: 2;
 }
 
 #Footer .contact-me-img {
-  width: 209px;
-  height: 239px;
+  width: 200px;
+  height: 369px;
   background: url(../images/contact-me-img.png) no-repeat;
   position: absolute;
-  top: -255px;
-  right: 165px;
+  top: -400px;
+  right: -101px;
+  z-index: 1;
 }
 
 #Footer .container {
